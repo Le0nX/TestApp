@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		144A8ABE2375BE8500F2DBED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A8ABD2375BE8500F2DBED /* AppDelegate.swift */; };
 		144A8AC02375BE8500F2DBED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A8ABF2375BE8500F2DBED /* SceneDelegate.swift */; };
-		144A8AC22375BE8500F2DBED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A8AC12375BE8500F2DBED /* ViewController.swift */; };
+		144A8AC22375BE8500F2DBED /* FriendsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A8AC12375BE8500F2DBED /* FriendsListVC.swift */; };
 		144A8AC52375BE8500F2DBED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 144A8AC32375BE8500F2DBED /* Main.storyboard */; };
 		144A8AC82375BE8500F2DBED /* FriendsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 144A8AC62375BE8500F2DBED /* FriendsApp.xcdatamodeld */; };
 		144A8ACA2375BE8B00F2DBED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 144A8AC92375BE8B00F2DBED /* Assets.xcassets */; };
 		144A8ACD2375BE8B00F2DBED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 144A8ACB2375BE8B00F2DBED /* LaunchScreen.storyboard */; };
 		144A8AD82375BE8B00F2DBED /* FriendsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A8AD72375BE8B00F2DBED /* FriendsAppTests.swift */; };
+		144A8AE523770B0D00F2DBED /* EidtProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A8AE423770B0D00F2DBED /* EidtProfileVC.swift */; };
+		144A8AE723770B3E00F2DBED /* AddProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A8AE623770B3E00F2DBED /* AddProfileVC.swift */; };
+		144A8AEA23770CE500F2DBED /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A8AE923770CE500F2DBED /* FriendCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +34,7 @@
 		144A8ABA2375BE8500F2DBED /* FriendsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		144A8ABD2375BE8500F2DBED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		144A8ABF2375BE8500F2DBED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		144A8AC12375BE8500F2DBED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		144A8AC12375BE8500F2DBED /* FriendsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListVC.swift; sourceTree = "<group>"; };
 		144A8AC42375BE8500F2DBED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		144A8AC72375BE8500F2DBED /* FriendsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FriendsApp.xcdatamodel; sourceTree = "<group>"; };
 		144A8AC92375BE8B00F2DBED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +43,9 @@
 		144A8AD32375BE8B00F2DBED /* FriendsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		144A8AD72375BE8B00F2DBED /* FriendsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAppTests.swift; sourceTree = "<group>"; };
 		144A8AD92375BE8B00F2DBED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		144A8AE423770B0D00F2DBED /* EidtProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EidtProfileVC.swift; sourceTree = "<group>"; };
+		144A8AE623770B3E00F2DBED /* AddProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileVC.swift; sourceTree = "<group>"; };
+		144A8AE923770CE500F2DBED /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +87,11 @@
 		144A8ABC2375BE8500F2DBED /* FriendsApp */ = {
 			isa = PBXGroup;
 			children = (
+				144A8AE823770CD200F2DBED /* Views */,
+				144A8AE323770AB800F2DBED /* Controllers */,
+				144A8AE223770AA700F2DBED /* Services */,
 				144A8ABD2375BE8500F2DBED /* AppDelegate.swift */,
 				144A8ABF2375BE8500F2DBED /* SceneDelegate.swift */,
-				144A8AC12375BE8500F2DBED /* ViewController.swift */,
 				144A8AC32375BE8500F2DBED /* Main.storyboard */,
 				144A8AC92375BE8B00F2DBED /* Assets.xcassets */,
 				144A8ACB2375BE8B00F2DBED /* LaunchScreen.storyboard */,
@@ -100,6 +108,31 @@
 				144A8AD92375BE8B00F2DBED /* Info.plist */,
 			);
 			path = FriendsAppTests;
+			sourceTree = "<group>";
+		};
+		144A8AE223770AA700F2DBED /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		144A8AE323770AB800F2DBED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				144A8AC12375BE8500F2DBED /* FriendsListVC.swift */,
+				144A8AE423770B0D00F2DBED /* EidtProfileVC.swift */,
+				144A8AE623770B3E00F2DBED /* AddProfileVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		144A8AE823770CD200F2DBED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				144A8AE923770CE500F2DBED /* FriendCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +236,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				144A8AC22375BE8500F2DBED /* ViewController.swift in Sources */,
+				144A8AEA23770CE500F2DBED /* FriendCell.swift in Sources */,
+				144A8AE723770B3E00F2DBED /* AddProfileVC.swift in Sources */,
+				144A8AC22375BE8500F2DBED /* FriendsListVC.swift in Sources */,
 				144A8ABE2375BE8500F2DBED /* AppDelegate.swift in Sources */,
 				144A8AC02375BE8500F2DBED /* SceneDelegate.swift in Sources */,
+				144A8AE523770B0D00F2DBED /* EidtProfileVC.swift in Sources */,
 				144A8AC82375BE8500F2DBED /* FriendsApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
