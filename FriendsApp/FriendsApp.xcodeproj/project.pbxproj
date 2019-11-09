@@ -19,6 +19,7 @@
 		144A8AE723770B3E00F2DBED /* AddProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A8AE623770B3E00F2DBED /* AddProfileVC.swift */; };
 		144A8AEA23770CE500F2DBED /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A8AE923770CE500F2DBED /* FriendCell.swift */; };
 		144A8AEC2377140E00F2DBED /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A8AEB2377140E00F2DBED /* WebService.swift */; };
+		144A8AEF2377236700F2DBED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A8AEE2377236700F2DBED /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		144A8AE623770B3E00F2DBED /* AddProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileVC.swift; sourceTree = "<group>"; };
 		144A8AE923770CE500F2DBED /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		144A8AEB2377140E00F2DBED /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		144A8AEE2377236700F2DBED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		144A8ABC2375BE8500F2DBED /* FriendsApp */ = {
 			isa = PBXGroup;
 			children = (
+				144A8AED2377235A00F2DBED /* Models */,
 				144A8AE823770CD200F2DBED /* Views */,
 				144A8AE323770AB800F2DBED /* Controllers */,
 				144A8AE223770AA700F2DBED /* Services */,
@@ -136,6 +139,14 @@
 				144A8AE923770CE500F2DBED /* FriendCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		144A8AED2377235A00F2DBED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				144A8AEE2377236700F2DBED /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +257,7 @@
 				144A8ABE2375BE8500F2DBED /* AppDelegate.swift in Sources */,
 				144A8AC02375BE8500F2DBED /* SceneDelegate.swift in Sources */,
 				144A8AE523770B0D00F2DBED /* EidtProfileVC.swift in Sources */,
+				144A8AEF2377236700F2DBED /* User.swift in Sources */,
 				144A8AC82375BE8500F2DBED /* FriendsApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
