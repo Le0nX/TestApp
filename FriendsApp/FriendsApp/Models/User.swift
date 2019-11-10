@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User: Codable {
+public struct User: Codable {
     let id: Int
     let firstName: String
     let lastName: String
@@ -39,7 +39,7 @@ extension User {
 //    }
     
     // пропускаем dateCreated поле для POST и PATCH запросов
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
         try container.encode(firstName, forKey: .firstName)

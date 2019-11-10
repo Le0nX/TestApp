@@ -8,15 +8,19 @@
 
 import UIKit
 
-class AddProfileVC: UIViewController {
+public class AddProfileVC: UIViewController {
 
-    override func viewDidLoad() {
+    public weak var delegate: AddProfileVCDelegate?
+    
+    override public func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func addedNewProfile(_ sender: UIButton) {
+        delegate?.addProfileVCDelegate(self, didAdded: User(id: 1, firstName: "a", lastName: "a", email: "a", imageUrl: "a", dateCreated: Date()))
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
