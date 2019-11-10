@@ -10,7 +10,6 @@ import Foundation
 
 
 var decoder = JSONDecoder()
-//decoder.dateDecodingStrategy = .iso8601
 
 let baseUrl = URL(string: "https://frogogo-test.herokuapp.com/")
 
@@ -38,36 +37,75 @@ extension HttpMethod {
 /**
    Структура запрашиваемых данных вместе с обработчиком
        Воозвращает нам уже обработанные данные или nil
+    Содержит в себе urlRequest с инкапсуляцией тела запроса и
+ обработчик запросов.
 */
 struct Resource<T> {
-    let url: URL
-    let method: HttpMethod<Data>
+    var urlRequest: URLRequest
     let parse: (Data) -> T?
 }
 
+
+extension Resource {
+    /**
+     Дополнительный метод map для ресурса. Принимает в себя асинхронную клоужу и возвращает
+     ресурс с новым обработчиком.
+     Сначала вызывается оригинальный parse обработчик, после чего результат трансоформируется вторым
+     обработчиком....
+     */
+    func map<A>(_ transform: @escaping (T) -> A) -> Resource<A> {
+        return Resource<A>(urlRequest: urlRequest) { self.parse($0).map(transform) }
+    }
+}
+
 extension Resource where T: Decodable {
+    
+    /**
+        Конструктор GET запроса. Создает реквест с нужным урлом
+     и дфеолтный хендлер декода из JSON'a
+     */
+    init (get url: URL) {
+        self.urlRequest = URLRequest(url: url)
+        self.parse = { data in
+            decoder.dateDecodingStrategy = .iso8601
+            return try? decoder.decode(T.self, from: data)
+        }
+    }
+    
+    /**
+     Конструктор POST и PATCH запросов.
+     Добавлен енкодер тела запроса.
+     */
     init<Body: Encodable> (url: URL, method: HttpMethod<Body>) {
-        self.url = url
-        self.method = method.map { value in
-            try! JSONEncoder().encode(value)
+        self.urlRequest = URLRequest(url: url)
+        self.urlRequest.httpMethod = method.method // передаем наш String с методом
+        switch method {
+        case .get: ()
+        case .post(let body), .patch(let body):
+            self.urlRequest.httpBody = try! JSONEncoder().encode(body)
         }
         self.parse = { data in
-            try? JSONDecoder().decode(T.self, from: data)
+            decoder.dateDecodingStrategy = .iso8601
+            return try? decoder.decode(T.self, from: data)
         }
     }
 }
 
-final class WebService {
-// using final for dispatch optimization
+/**
+ Было принято решение переписать отдельный класс на эксетеншен URLSession
+ в связи с использованием URLRequest'a в теле Resource. Дополнительный слой абстракции в данном случае
+ видится излишним и будет репликировать URLSession.
+ */
+extension URLSession {
     // метод асинхронной загрузки и обработки уже готовых данных из ресурса
     func load<T>(_ resource: Resource<T>, completion: @escaping (T?) -> (Void)) {
-        URLSession.shared.dataTask(with: resource.url, completionHandler: { data, response, error in
+        dataTask(with: resource.urlRequest) { data, response, error in
             
             DispatchQueue.main.async {
                 completion(data.flatMap(resource.parse))
             }
             
-        }).resume()
+        }.resume()
     }
 }
 
